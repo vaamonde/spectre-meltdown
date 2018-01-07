@@ -1,5 +1,6 @@
 #! /bin/sh
 # Script de verificação da vulnerabilidade Spectre & Meltdown nos processadores Intel
+# Script compilado em C utilizado o shc: https://github.com/neurobin/shc
 # Criado por: Stephane Lesimple
 # Modificado por: Robson Vaamonde
 # Traduzido por: Robson Vaamonde
