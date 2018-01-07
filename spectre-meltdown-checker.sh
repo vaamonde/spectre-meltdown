@@ -1,9 +1,13 @@
 #! /bin/sh
-# Spectre & Meltdown checker
-# Stephane Lesimple
+# Script de verificação da vulnerabilidade Spectre & Meltdown nos processadores Intel
+# Criado por: Stephane Lesimple
 # Modificado por: Robson Vaamonde
 # Traduzido por: Robson Vaamonde
-# Procedimentos em TI e Bora para Prática!!!
+# Site: www.procedimentosemti.com.br
+# Facebook: facebook.com/ProcedimentosEmTI
+# Facebook: facebook.com/BoraParaPratica
+# YouTube: youtube.com/BoraParaPratica
+# Data de atualização: 07/01/2018
 
 VERSION=0.07
 SUB_VERSION=1.0
