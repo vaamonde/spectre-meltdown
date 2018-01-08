@@ -78,23 +78,36 @@ fi
 ./meltdown $linux_proc_banner 10
 vuln=$?
 
+echo
+
 if test $vuln -eq 132; then
-	echo "INSTRUÇÃO ILEGAL"
-	echo "Tente recompilar com a opção:"
-	echo " make CFLAGS='-DHAVE_RDTSCP=0' clean all"
-	echo "Executar novamente o script"
+	pstatus yellow 'INSTRUÇÃO ILEGAL'
+	echo "Tente recompilar o Meltdown com as opções:"
+	echo "make CFLAGS='-DHAVE_RDTSCP=0' clean all"
+	echo "Depois, execute novamente o script $0"
+	echo
 fi
 if test $vuln -eq 1; then
 	echo "POR FAVOR, VERIFIQUE AS INFORMAÇÕES NESSA URL: https://github.com/paboldin/meltdown-exploit/issues/19"
-	echo "VULNERÁVEL"
+	echo
+	pstatus red 'VULNERÁVEL'
+	echo
+	echo -e "\033[1;34mInformações do Kernel\033[0m"
 	uname -rvi
+	echo
+	echo -e "\033[1;34mInformações do Processador\033[0m"
 	head /proc/cpuinfo
 	exit 1
 fi
 if test $vuln -eq 0; then
 	echo "POR FAVOR, VERIFIQUE AS INFORMAÇÕES NESSA URL: https://github.com/paboldin/meltdown-exploit/issues/22"
-	echo "NÃO VULNERÁVEL"
+	echo
+	pstatus green 'NÃO VULNERÁVEL'
+	echo
+	echo -e "\033[1;34mInformações do Kernel\033[0m"
 	uname -rvi
+	echo
+	echo -e "\033[1;34mInformações do Processador\033[0m"
 	head /proc/cpuinfo
 	exit 0
 fi
