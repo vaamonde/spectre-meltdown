@@ -8,11 +8,13 @@
 # Facebook: facebook.com/ProcedimentosEmTI
 # Facebook: facebook.com/BoraParaPratica
 # YouTube: youtube.com/BoraParaPratica
-# Data de atualização: 07/01/2018
+# Data de atualização: 08/01/2018
 
 VERSION=0.07
 SUB_VERSION=1.0
 DATA=`date +%d/%m/%Y-%H:%M`
+KERNEL=`uname -r`
+LINUX=`hostnamectl | tail -n3 | head -n1 | cut -d':' -f2`
 
 pstatus()
 {
@@ -82,6 +84,13 @@ extract_vmlinux()
 /bin/echo "Script original criado por: Stephane Lesimple - v$VERSION"
 /bin/echo "Script modificado/traduzido por: Robson Vaamonde - sv$SUB_VERSION"
 /bin/echo "Site: procedimentosemti.com.br | boraparapratica.com.br"
+/bin/echo
+
+# Versão do seu Kernel e do GNU/Linux
+/bin/echo -e "\033[1;34mVersão do Kernel instalada e rodando no seu GNU/Linux\033[0m"
+/bin/echo -e "* Versão do Kernel instalada: $KERNEL"
+/bin/echo -e "* Versão do GNU/Linux instalada:$LINUX"
+pstatus red 'POSSIBILIDADE DE ESTÁ VUNERAVLEL'
 /bin/echo
 
 # SPECTRE 1
