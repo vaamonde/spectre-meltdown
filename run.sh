@@ -92,10 +92,10 @@ if test $vuln -eq 1; then
 	echo
 	pstatus red 'VULNERÁVEL'
 	echo
-	echo -e "\033[1;34mInformações do Kernel\033[0m"
+	echo "\033[1;34mInformações do Kernel\033[0m"
 	uname -rvi
 	echo
-	echo -e "\033[1;34mInformações do Processador\033[0m"
+	echo "\033[1;34mInformações do Processador\033[0m"
 	head /proc/cpuinfo
 	exit 1
 fi
@@ -104,10 +104,10 @@ if test $vuln -eq 0; then
 	echo
 	pstatus green 'NÃO VULNERÁVEL'
 	echo
-	echo -e "\033[1;34mInformações do Kernel\033[0m"
+	echo "\033[1;34mInformações do Kernel\033[0m"
 	uname -rvi
 	echo
-	echo -e "\033[1;34mInformações do Processador\033[0m"
+	echo "\033[1;34mInformações do Processador\033[0m"
 	head /proc/cpuinfo
 	exit 0
 fi
